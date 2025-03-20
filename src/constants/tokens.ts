@@ -44,6 +44,13 @@ export const USDT_BSC_TESTNET = new Token(
   'USDT',
   'Tether USD'
 )
+export const USDT_BTH_TESTNET = new Token(
+  SupportedChainId.BTH_TESTNET,
+  '0x438f73Ac8Fea17AfF5154Ce9ce5A6E3a92960D80',
+  6,
+  'USDT',
+  'Tether USD'
+)
 export const WBTC = new Token(
   SupportedChainId.MAINNET,
   '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
@@ -142,6 +149,13 @@ export const WETH9_EXTENDED: { [chainId: number]: Token } = {
   [SupportedChainId.BSC_TESTNET]: new Token(
     SupportedChainId.BSC_TESTNET,
     '0x4Ae32D12b1c30e482A26Bad11d0E0682d91b93a5',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [SupportedChainId.BTH_TESTNET]: new Token(
+    SupportedChainId.BTH_TESTNET,
+    '0x6fD04baCF762C60CDBd34346d242312d82299859',
     18,
     'WETH',
     'Wrapped Ether'

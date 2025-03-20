@@ -30,6 +30,7 @@ const NETWORK_URLS: {
   [SupportedChainId.ARBITRUM_ONE]: `https://arb1.arbitrum.io/rpc`,
   [SupportedChainId.ARBITRUM_RINKEBY]: `https://rinkeby.arbitrum.io/rpc`,
   [SupportedChainId.BSC_TESTNET]: 'https://bsc-testnet.nodereal.io/v1/cd23340661a64776a3995ffea4c22539',
+  [SupportedChainId.BTH_TESTNET]: 'https://rpc-testnet.bthscan.io',
 }
 
 const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
@@ -41,6 +42,7 @@ const SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.ARBITRUM_RINKEBY,
   SupportedChainId.BSC_TESTNET,
+  SupportedChainId.BTH_TESTNET,
 ]
 
 export const network = new NetworkConnector({

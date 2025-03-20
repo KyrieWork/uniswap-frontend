@@ -15,7 +15,7 @@ import { unwrappedToken } from 'utils/unwrappedToken'
 import RangeBadge from 'components/Badge/RangeBadge'
 import { RowFixed } from 'components/Row'
 import HoverInlineText from 'components/HoverInlineText'
-import { DAI, USDC, USDT_BSC_TESTNET, USDT, WBTC, WETH9_EXTENDED } from '../../constants/tokens'
+import { DAI, USDC, USDT_BSC_TESTNET, USDT, WBTC, WETH9_EXTENDED, USDT_BTH_TESTNET } from '../../constants/tokens'
 import { Trans } from '@lingui/macro'
 
 const LinkRow = styled(Link)`
@@ -135,7 +135,7 @@ export function getPriceOrderingFromPositionForUI(position?: Position): {
   const token1 = position.amount1.currency
 
   // if token0 is a dollar-stable asset, set it as the quote token
-  const stables = [DAI, USDC, USDT, USDT_BSC_TESTNET]
+  const stables = [DAI, USDC, USDT, USDT_BSC_TESTNET, USDT_BTH_TESTNET]
   if (stables.some((stable) => stable.equals(token0))) {
     return {
       priceLower: position.token0PriceUpper.invert(),

@@ -61,6 +61,19 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
     }
   }
 
+  if (chainId === SupportedChainId.BTH_TESTNET) {
+    switch (type) {
+      case ExplorerDataType.TRANSACTION:
+        return `https://testnet.bthscan.io/tx/${data}`
+      case ExplorerDataType.ADDRESS:
+        return `https://testnet.bthscan.io/address/${data}`
+      case ExplorerDataType.BLOCK:
+        return `https://testnet.bthscan.io/block/${data}`
+      default:
+        return `https://testnet.bthscan.io/`
+    }
+  }
+
   const prefix = `https://${ETHERSCAN_PREFIXES[chainId] ?? ''}etherscan.io`
 
   switch (type) {

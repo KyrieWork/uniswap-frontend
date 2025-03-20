@@ -20,6 +20,7 @@ import {
   ETH2X_FLI,
   WETH9_EXTENDED,
   USDT_BSC_TESTNET,
+  USDT_BTH_TESTNET,
 } from './tokens'
 
 type ChainTokenList = {
@@ -58,12 +59,14 @@ const WETH_ONLY: ChainTokenList = {
   [SupportedChainId.KOVAN]: [WETH9_EXTENDED[SupportedChainId.KOVAN]],
   [SupportedChainId.ARBITRUM_ONE]: [WETH9_EXTENDED[SupportedChainId.ARBITRUM_ONE]],
   [SupportedChainId.BSC_TESTNET]: [WETH9_EXTENDED[SupportedChainId.BSC_TESTNET]],
+  [SupportedChainId.BTH_TESTNET]: [WETH9_EXTENDED[SupportedChainId.BTH_TESTNET]],
 }
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
   [1]: [...WETH_ONLY[1], DAI, USDC, USDT, WBTC],
   [SupportedChainId.BSC_TESTNET]: [...WETH_ONLY[SupportedChainId.BSC_TESTNET], USDT_BSC_TESTNET],
+  [SupportedChainId.BTH_TESTNET]: [...WETH_ONLY[SupportedChainId.BTH_TESTNET], USDT_BTH_TESTNET],
 }
 export const ADDITIONAL_BASES: { [chainId: number]: { [tokenAddress: string]: Token[] } } = {
   [1]: {
@@ -109,6 +112,11 @@ export const COMMON_BASES: ChainCurrencyList = {
     ExtendedEther.onChain(SupportedChainId.BSC_TESTNET),
     WETH9_EXTENDED[SupportedChainId.BSC_TESTNET],
     USDT_BSC_TESTNET,
+  ],
+  [SupportedChainId.BTH_TESTNET]: [
+    ExtendedEther.onChain(SupportedChainId.BTH_TESTNET),
+    WETH9_EXTENDED[SupportedChainId.BTH_TESTNET],
+    USDT_BTH_TESTNET,
   ],
 }
 

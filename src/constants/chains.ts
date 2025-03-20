@@ -7,6 +7,7 @@ export enum SupportedChainId {
   ARBITRUM_ONE = 42161,
   ARBITRUM_RINKEBY = 421611,
   BSC_TESTNET = 97,
+  BTH_TESTNET = 141491,
 }
 
 export const NETWORK_LABELS: { [chainId in SupportedChainId | number]: string } = {
@@ -18,4 +19,5 @@ export const NETWORK_LABELS: { [chainId in SupportedChainId | number]: string } 
   [SupportedChainId.ARBITRUM_ONE]: 'Arbitrum',
   [SupportedChainId.ARBITRUM_RINKEBY]: 'Arbitrum Testnet',
   [SupportedChainId.BSC_TESTNET]: 'BNBChain Testnet',
+  [SupportedChainId.BTH_TESTNET]: 'Bitharvest Testnet',
 }
