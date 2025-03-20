@@ -76,6 +76,12 @@ const plurals: LocalePlural = {
 }
 
 export async function dynamicActivate(locale: SupportedLocale) {
+  if (locale === 'en-US') {
+    i18n.loadLocaleData(locale, { plurals: () => plurals[locale] })
+    i18n.load(locale, {})
+    i18n.activate(locale)
+    return
+  }
   const { messages } = await import(`@lingui/loader!./locales/${locale}.po`)
   i18n.loadLocaleData(locale, { plurals: () => plurals[locale] })
   i18n.load(locale, messages)
