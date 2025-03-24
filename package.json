@@ -1,7 +1,7 @@
 {
-  "name": "@uniswap/interface",
+  "name": "uniswap-frontend",
   "description": "Uniswap Interface",
-  "homepage": ".",
+  "homepage": "https://KyrieWork.github.io/uniswap-frontend",
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.2.0",
@@ -71,6 +71,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "ethers": "^5.2.0",
+    "gh-pages": "^6.3.0",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
     "inter-ui": "^3.13.1",
@@ -130,7 +131,9 @@
     "graphql:generate": "graphql-codegen --config codegen.yml",
     "postinstall": "yarn compile-contract-types",
     "start": "yarn compile-contract-types && react-scripts start",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app",
